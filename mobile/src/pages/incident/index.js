@@ -20,15 +20,13 @@ export default function Incidents() {
     async function loadIncidents() {
 
         if (loading) {
-            console.log("Primeiro");
             return;
         }
 
         if (total > 0 && incidents.length === total) {
-            console.log("Segundo");
+            return;
         }
 
-        console.log("Direto");
         setLoading(true);
 
         const response = await api.get('incidents', {
